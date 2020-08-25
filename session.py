@@ -1,3 +1,6 @@
+# coding: utf-8
+
+from __future__ import print_function
 import os
 import re
 import requests
@@ -48,7 +51,7 @@ class SharePointSession(requests.Session):
     """
 
     def __init__(self, site=None, username=None, password=None, auth_tld=None):
-        super().__init__()
+        super(SharePointSession, self).__init__()
 
         if site is not None:
             self.site = re.sub(r"^https?://", "", site)
